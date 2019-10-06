@@ -1,0 +1,47 @@
+<div class="productos">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descrición</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Borar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of productos">
+                        <th scope="row">
+                            <a href="/producto/comercial/{{producto.id}}">
+                                <img src="{{producto.img}}" alt="" width="45" height="45">
+                            </a>
+                        </th>
+                        <td>{{producto.nombre}}</td>
+                        <td>{{producto.descripcion}}</td>
+                        <td>
+                            <button class="btn btn-info" (click)="editar()">
+                                Editar
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="borrar()">
+                                Borrar
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <a  [routerLink]="['/producto/nuevo']" class="btn btn-primary">Nuevo Producto</a> 
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>

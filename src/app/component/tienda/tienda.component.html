@@ -1,0 +1,32 @@
+<div class="tienda">
+    <div class="row">
+        <div class="col-md-6">
+            <form #form="ngForm" (submit)="crear(form)">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input  #nombre="ngModel" [(ngModel)]="tienda.nombre" type="text" class="form-control" name="nombre"  placeholder="Nombre de la tienda">
+                    <small id="nombreMess" class="form-text text-muted">El nombre de la tienda es obligatorio.</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="decripcion">Descripción de la tienda</label>
+                    <textarea #descrepcion="ngModel" [(ngModel)]="tienda.decripcion" class="form-control" name="decripcion" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="img">Imagen</label>
+                    <input #img="ngModel" [(ngModel)]="tienda.img" type="text" class="form-control" name="img"  placeholder="Entre con en url de la imagine">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img src="{{tienda.img}}" alt="">
+            <h2>{{tienda.nombre}}</h2>
+            <p>
+                {{tienda.decripcion}}
+            </p>    
+        </div>
+    </div>
+</div>
